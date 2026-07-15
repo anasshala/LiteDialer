@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">لوحة الاتصال</string>
+    <string name="hint_enter">أدخل رقم</string>
+    <string name="tab_contacts">جهات الاتصال</string>
+    <string name="tab_log">سجل</string>
+    <string name="tab_keypad">لوحة المفاتيح</string>
+    <string name="empty_log">لا يوجد سجل مكالمات</string>
+    <string name="empty_contacts">لا يوجد جهات اتصال</string>
+    <string name="cd_call">اتصال</string>
+    <string name="cd_delete">حذف</string>
+</resources>

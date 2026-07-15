@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- منطقة عرض الرقم -->
+    <LinearLayout
+        android:id="@+id/displayArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="12dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/numberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:textColor="@color/text_main"
+            android:letterSpacing="0.05"
+            android:singleLine="true"
+            android:textDirection="ltr" />
+
+        <TextView
+            android:id="@+id/hintText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/hint_enter"
+            android:textSize="13sp"
+            android:textColor="@color/text_dim" />
+    </LinearLayout>
+
+    <!-- لوحة الأرقام -->
+    <GridLayout
+        android:id="@+id/keypad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="8dp">
+
+        <!-- كل مفتاح: TextView واحد بدون تعشيش زائد؛ الرقم والحروف بسطر واحد لأخف تخطيط -->
+        <TextView android:id="@+id/key1" style="@style/KeyStyle" android:text="1" android:tag="1"/>
+        <TextView android:id="@+id/key2" style="@style/KeyStyle" android:text="2\nABC" android:tag="2"/>
+        <TextView android:id="@+id/key3" style="@style/KeyStyle" android:text="3\nDEF" android:tag="3"/>
+        <TextView android:id="@+id/key4" style="@style/KeyStyle" android:text="4\nGHI" android:tag="4"/>
+        <TextView android:id="@+id/key5" style="@style/KeyStyle" android:text="5\nJKL" android:tag="5"/>
+        <TextView android:id="@+id/key6" style="@style/KeyStyle" android:text="6\nMNO" android:tag="6"/>
+        <TextView android:id="@+id/key7" style="@style/KeyStyle" android:text="7\nPQRS" android:tag="7"/>
+        <TextView android:id="@+id/key8" style="@style/KeyStyle" android:text="8\nTUV" android:tag="8"/>
+        <TextView android:id="@+id/key9" style="@style/KeyStyle" android:text="9\nWXYZ" android:tag="9"/>
+        <TextView android:id="@+id/keyStar" style="@style/KeyStyle" android:text="*" android:tag="*"/>
+        <TextView android:id="@+id/key0" style="@style/KeyStyle" android:text="0\n+" android:tag="0"/>
+        <TextView android:id="@+id/keyHash" style="@style/KeyStyle" android:text="#" android:tag="#"/>
+    </GridLayout>
+
+    <!-- صف أزرار الاتصال والحذف -->
+    <RelativeLayout
+        android:id="@+id/actionRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+        android:paddingBottom="20dp">
+
+        <ImageButton
+            android:id="@+id/callBtn"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_call_button"
+            android:src="@drawable/ic_call"
+            android:contentDescription="@string/cd_call"
+            android:padding="16dp" />
+
+        <ImageButton
+            android:id="@+id/delBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/callBtn"
+            android:layout_marginEnd="36dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/cd_delete"
+            android:visibility="invisible"
+            android:padding="10dp" />
+    </RelativeLayout>
+
+    <!-- التبويبات -->
+    <LinearLayout
+        android:id="@+id/tabsRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/line"
+        android:showDividers="none">
+
+        <TextView
+            android:id="@+id/tabContacts"
+            style="@style/TabStyle"
+            android:text="@string/tab_contacts" />
+
+        <TextView
+            android:id="@+id/tabLog"
+            style="@style/TabStyle"
+            android:text="@string/tab_log" />
+
+        <TextView
+            android:id="@+id/tabKeypad"
+            style="@style/TabStyle"
+            android:text="@string/tab_keypad"
+            android:textColor="@color/accent" />
+    </LinearLayout>
+
+    <!-- قائمة السجل / جهات الاتصال -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:divider="@color/line"
+        android:dividerHeight="1dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp" />
+
+</LinearLayout>
